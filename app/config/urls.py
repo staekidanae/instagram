@@ -11,6 +11,7 @@ urlpatterns = [
     # path('media/<str:path>/', 특정view_function),
     path('posts/', include('posts.urls')),
     path('', views.index),
+    path('members/', include('members.urls')),
 
 ] + static(
     prefix=settings.MEDIA_URL,
