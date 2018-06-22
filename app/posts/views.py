@@ -1,11 +1,16 @@
 from django.http import HttpResponse, request
 from django.shortcuts import render
+from .models import Post
 
 def index():
     pass
 
 def post_list(request):
-    return HttpResponse('Post List')
+    # poasts = Post.objects.all()
+    # contextx = {
+    #     'posts' : posts
+    # }
+    return render(request, 'posts/post_list.html')
 
 def post_detail():
-    return HttpResponse('Post Detail pk: {}'.format(pk))
+    return render(request, 'posts/post_detail.html')
